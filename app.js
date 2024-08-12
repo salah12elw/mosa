@@ -8,7 +8,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const mongooseLink = "mongodb+srv://salahelw1020:1234567812345678@cluster0.zwyiitm.mongodb.net/"
+const mongooseLink = "mongodb+srv://salahelw10:Sal19701970@cluster0.dkgus.mongodb.net/"
+
 
 mongoose.connect(mongooseLink)
 

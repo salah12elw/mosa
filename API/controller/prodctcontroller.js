@@ -3,7 +3,8 @@ const proudct_MODEL = require("../models/proudctmodel");
 // app.post("/createuser",
 const createproudct = async (req, res) => {
   const { name, price, image } = req.body;
-
+  console.log(name, price, image);
+  
   try {
     const proudct = await proudct_MODEL.create({
       name,price,image,
@@ -13,6 +14,8 @@ const createproudct = async (req, res) => {
       return: proudct,
     });
   } catch (error) {
+    console.log(error);
+    
     res.status(500).json({
       error: error.message,
     });
@@ -23,7 +26,6 @@ const createproudct = async (req, res) => {
 const findproudctall = async (req, res) => {
   const { name } = req.body;
   const query = name ? { name: name } : {};
-
   try {
     const proudct = await proudct_MODEL.find(query);
 
